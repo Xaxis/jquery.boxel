@@ -22,10 +22,8 @@
         }
         #box {
             max-width: 200px;
-            background: black;
-            color: white;
+            border: 1px dashed black;
             position: absolute;
-            padding: 5px;
         }
     </style>
 </head>
@@ -42,7 +40,7 @@
     $('#box').boxel({
 
         // Location box is positioned
-        pos: 'top-left',
+        pos: 'tl',
 
         // Element box is positioned relative to
         rel: $('#rel'),

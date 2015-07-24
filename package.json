@@ -1,7 +1,7 @@
 {
   "name": "jquery.boxel",
   "version": "1.0.0",
-  "description": "",
+  "description": "A jQuery plugin for positioning elements relative to other elements.",
   "main": "index.js",
   "directories": {
     "test": "test"

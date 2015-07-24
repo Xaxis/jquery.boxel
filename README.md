@@ -1,33 +1,81 @@
-# jquery.plugin
+# jquery.boxel
 
 Version 1.0.0
 
 ## Summary
 
-A jQuery plugin scaffolding to assist in the rapid development of jQuery plugins.
+A jQuery plugin for positioning elements relative to other elements.
 
-This is the jQuery plugin scaffolding I use to get started writing a new jQuery plugin.
+jQuery.boxel is highly useful for positioning pop up message boxes and the like among many other things.
 
 ## Features
 
-* Simple directory structure
-* Thoughtful plugin scaffolding
-* Grunt based file watching/minification
-* Test page configured for easy development
+* Shortcut position indicators (`tl`,`br`, etc...)
+* Outer and inner positioning 
+* Offset margin specification
 
 ## Author
 
 Wil Neeley ( [@wilneeley](http://twitter.com/wilneeley) / [github.com](https://github.com/Xaxis) )
 
-## Getting started
+## Usage
 
-1. Clone the repo into your target project directory and copy all files to your project directory.
-2. Rename `jquery.plugin.js` to whatever your project is named as well as the `project_name` variable in that file.
-3. Change `jquery.plugin` references in `package.json`, `gruntfile.js`, and `test.html` to correspond with your project's name.
-4. Make sure you have npm installed.
-5. From your project root run `npm install` to install dependencies.
-6. From your terminal in your project root run `grunt` to initialize JS file watcher.
-7. Start developing! 
+Include `jquery.boxel.min.js` after jQuery.
+
+### Position Elements
+
+```javascript
+    // Plugin test
+    $('#box').boxel({
+
+        // Location box is positioned
+        pos: 'tl',
+
+        // Element box is positioned relative to
+        rel: $('#rel'),
+
+        // Positioned inside or outside relative element
+        inner: false,
+
+        // Y offset margin
+        offy: 0,
+
+        // X offset margin
+        offx: 0,
+
+        // Overall offset margin (overrides y/x when specified)
+        offset: 0
+    });
+```
+
+The preceding code will position the following absolutely positioned `#box` element at the outer top left corner of the
+`#rel` element. Inversely you could just as easily position `#elm` in the inner top left corner by setting the `inner`
+property to `true`.
+ 
+Positioning options are `top`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-left`, `left`, and `top-left`.
+You can alternately use the positioning strings `t`, `tr`, `r`, `br`, `b`, `bl`, `l`, or `tl`.
+
+
+```css
+#rel {
+    width: 400px;
+    height: 260px;
+}
+#box {
+    max-width: 200px;
+    border: 1px dashed black;
+    position: absolute;
+}
+```
+
+```html
+<button id="rel">relative element</button>
+<div id="box">message box</div>
+```
+
+## Examples
+
+See `test/test.html`.
 
 ## Changelog
 
