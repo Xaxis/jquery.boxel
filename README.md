@@ -6,7 +6,7 @@ Version 1.0.0
 
 A jQuery plugin for positioning elements relative to other elements.
 
-jQuery.boxel is highly useful for positioning pop up message boxes and the like among many other things.
+jQuery.boxel is highly useful for positioning pop up message boxes among many other things.
 
 ## Features
 
@@ -24,8 +24,25 @@ Include `jquery.boxel.min.js` after jQuery.
 
 ### Position Elements
 
+```css
+#rel {
+    width: 400px;
+    height: 260px;
+}
+#box {
+    max-width: 200px;
+    border: 1px dashed black;
+    position: absolute;
+}
+```
+
+```html
+<button id="rel">relative element</button>
+<div id="box">message box</div>
+```
+
 ```javascript
-    // Plugin test
+    // Position #box relative to #rel element
     $('#box').boxel({
 
         // Location box is positioned
@@ -48,30 +65,12 @@ Include `jquery.boxel.min.js` after jQuery.
     });
 ```
 
-The preceding code will position the following absolutely positioned `#box` element at the outer top left corner of the
-`#rel` element. Inversely you could just as easily position `#elm` in the inner top left corner by setting the `inner`
+The preceding code will position the absolutely positioned `#box` element at the outer top left corner of the
+`#rel` element. Alternatively you could position `#elm` in the inner top left corner by setting the `inner`
 property to `true`.
  
 Positioning options are `top`, `top-right`, `right`, `bottom-right`, `bottom`, `bottom-left`, `left`, and `top-left`.
 You can alternately use the positioning strings `t`, `tr`, `r`, `br`, `b`, `bl`, `l`, or `tl`.
-
-
-```css
-#rel {
-    width: 400px;
-    height: 260px;
-}
-#box {
-    max-width: 200px;
-    border: 1px dashed black;
-    position: absolute;
-}
-```
-
-```html
-<button id="rel">relative element</button>
-<div id="box">message box</div>
-```
 
 ## Examples
 
