@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jquery.boxel</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../dist/jquery.boxel.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .container {
+            width: 800px;
+            height: 400px;
+            margin: 200px auto;
+        }
+        #rel {
+            width: 400px;
+            height: 260px;
+        }
+        #box {
+            max-width: 200px;
+            background: black;
+            color: white;
+            position: absolute;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button id="rel">relative element</button>
+    <div id="box">message box</div>
+</div>
+
+<script>
+
+    // Plugin test
+    $('#box').boxel({
+
+        // Location box is positioned
+        pos: 'top-left',
+
+        // Element box is positioned relative to
+        rel: $('#rel'),
+
+        // Positioned inside or outside relative element
+        inner: false,
+
+        // Y offset margin
+        offy: 0,
+
+        // X offset margin
+        offx: 0,
+
+        // Overall offset margin (overrides y/x when specified)
+        offset: 0
+    });
+</script>
+</body>
+</html>
